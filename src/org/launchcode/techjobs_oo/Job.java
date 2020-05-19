@@ -101,6 +101,12 @@ public class Job {
 
     @Override
     public String toString() {
+
+        // if the getID exists AND all over values are false
+        if (this.name == "" && this.employer.getValue() == "" && this.location.getValue() =="" && this.positionType.getValue() == "" && this.coreCompetency.getValue() == "") {
+           return "OOPS! This job does not seem to exist.";
+        } else {
+
         if (this.name == "") {
             this.name = "Data not available";
         }
@@ -123,6 +129,7 @@ public class Job {
                                     "Location: " + this.location + "\n" +
                                     "Position Type: " + this.positionType + "\n" +
                                     "Core Competency: " + this.coreCompetency + "\n";
+        }
     }
 
 }
