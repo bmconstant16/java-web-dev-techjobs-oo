@@ -96,4 +96,35 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    //create a custom toString method
+
+    @Override
+    public String toString() {
+        if (this.name == "") {
+            this.name = "Data not available";
+        }
+            if (this.employer.getValue() == "") {
+                this.employer.setValue("Data not available");
+            }
+                if (this.location.getValue() == "") {
+                    this.location.setValue("Data not available");
+                }
+                    if (this.positionType.getValue() == "") {
+                        this.positionType.setValue("Data not available");
+                    }
+                        if (this.coreCompetency.getValue() == "") {
+                            this.coreCompetency.setValue("Data not available");
+                        }
+                            return "\n" +
+                                    "ID: " + this.id + "\n" +
+                                    "Name: " + this.name + "\n" +
+                                    "Employer: " + this.employer + "\n" +
+                                    "Location: " + this.location + "\n" +
+                                    "Position Type: " + this.positionType + "\n" +
+                                    "Core Competency: " + this.coreCompetency + "\n";
+    }
+
 }
+
+
